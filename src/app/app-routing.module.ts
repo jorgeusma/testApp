@@ -1,14 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './spotify/pages/home/home.component';
-import { SearchComponent } from './spotify/pages/search/search.component';
-
 
 const routes: Routes = [
-  { path: 'home', component: HomeComponent },
-  { path: 'search', component: SearchComponent },
-  { path: '', pathMatch: 'full', redirectTo: 'home' },
-  { path: '**', pathMatch: 'full', redirectTo: 'home' },
+  { path: 'spotify', loadChildren: () => import('./spotify/spotify.module').then(m => m.SpotifyModule) },
+  { path: '**', pathMatch: 'full', redirectTo: 'spotify' },
   
 ];
 

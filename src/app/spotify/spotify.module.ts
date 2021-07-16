@@ -1,19 +1,26 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HomeComponent } from './pages/home/home.component';
-import { SearchComponent } from './pages/search/search.component';
-import { MaterialModule } from '../material/material.module';
+import { FormsModule } from '@angular/forms';
+import { RouterModule, Routes } from '@angular/router';
 
 
+
+
+
+const routes: Routes = [
+  { path: 'home', loadChildren: () => import('./pages/home/home.module').then(m => m.HomeModule) },
+  { path: 'search', loadChildren: () => import('./pages/search/search.module').then(m => m.SearchModule) },
+  { path: '**', pathMatch: 'full', redirectTo: 'home' },
+]
 
 @NgModule({
   declarations: [
-    HomeComponent,
-    SearchComponent
+   
   ],
   imports: [
     CommonModule,
-    MaterialModule
+    FormsModule,
+    RouterModule.forChild(routes)
   ]
 })
 export class SpotifyModule { }

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { SpotifyService } from '../../services/spotify.service';
+
 
 @Component({
   selector: 'app-home',
@@ -7,10 +9,26 @@ import { Component, OnInit } from '@angular/core';
   ]
 })
 export class HomeComponent implements OnInit {
+  artist: string = "";
+  
 
-  constructor() { }
+
+  constructor(private spotifyService: SpotifyService) {
+
+    // this.spotifyService.buscar('whitesnake')
+    // .subscribe(res => {
+    //   console.log(res.artists.items.images)
+    // })    
+   }
 
   ngOnInit(): void {
+  }
+
+  buscar(){
+    this.spotifyService.buscar('whitesnake')
+    .subscribe(res => {      
+      console.log(res)
+    })
   }
 
 }
