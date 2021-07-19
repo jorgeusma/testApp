@@ -156,6 +156,8 @@ export class SearchComponent implements OnInit, AfterViewInit {
    */
   private _getTracks(tracksByAlmbum: any[]){
 
+    this.tracksArr = [];
+    
     tracksByAlmbum.forEach(album => {
       
       album.items.forEach((track: any) => {

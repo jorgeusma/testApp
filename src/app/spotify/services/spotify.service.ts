@@ -65,7 +65,7 @@ export class SpotifyService {
    */
   refreshToken():Promise<void> {
     return new Promise<void>((resolve, reject) =>{
-      const url = `http://pruebas.gcrisk.co:3000/spotify/388f0ac2065a4063a8367a3f99418077/f0f226193652406b9c9ad35c5dce3a85`;
+      const url = `https://pruebas.gcrisk.co:3000/spotify/388f0ac2065a4063a8367a3f99418077/f0f226193652406b9c9ad35c5dce3a85`;
       this.http.get<Token>(url).subscribe(res => {
         console.log(res)
         this.headers = new HttpHeaders({
