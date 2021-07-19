@@ -3,9 +3,11 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { SearchComponent } from './search.component';
 import { FormsModule } from '@angular/forms';
-import {MatCardModule} from '@angular/material/card';
+import { MatCardModule } from '@angular/material/card';
+import { MatTableModule } from '@angular/material/table';
 import { NoimagePipe } from '../../pipes/noimage.pipe';
-
+import { ComponentsModule } from '../../components/components.module';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 const routes: Routes = [
   { path: '', component: SearchComponent }
@@ -20,6 +22,9 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     MatCardModule,
+    MatTableModule,
+    MatFormFieldModule,
+    ComponentsModule,
     RouterModule.forChild(routes)
   ]
 })

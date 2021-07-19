@@ -25,10 +25,10 @@ export class HomeComponent implements OnInit {
   }
 
   buscar(){
-    this.spotifyService.buscar('whitesnake')
-    .subscribe(res => {      
-      console.log(res)
-    })
+    // this.spotifyService.buscar('whitesnake')
+    // .subscribe(res => {      
+    //   console.log(res)
+    // })
   }
 
 }
