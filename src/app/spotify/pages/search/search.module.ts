@@ -8,6 +8,8 @@ import { MatTableModule } from '@angular/material/table';
 import { NoimagePipe } from '../../pipes/noimage.pipe';
 import { ComponentsModule } from '../../components/components.module';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import {MatPaginatorModule} from '@angular/material/paginator';
 
 const routes: Routes = [
   { path: '', component: SearchComponent }
@@ -24,6 +26,8 @@ const routes: Routes = [
     MatCardModule,
     MatTableModule,
     MatFormFieldModule,
+    MatInputModule,
+    MatPaginatorModule,
     ComponentsModule,
     RouterModule.forChild(routes)
   ]
